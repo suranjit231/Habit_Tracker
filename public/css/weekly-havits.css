@@ -1,0 +1,434 @@
+/*
+
+.habits-box{
+    display: flex;
+    background-color: aqua;
+}
+
+.habits-box-table{
+    display: flex;
+    flex-direction: column;
+}
+
+.date-heading{
+    display: flex;
+}
+
+.habits-status-container{
+    display: flex;
+}
+
+.date-row{
+    display: flex;
+} */
+
+ .habits-container{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+   justify-content: flex-start;
+   align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background-color: aliceblue;
+    overflow-y: scroll;
+    padding-bottom: 20px;
+    
+}
+
+.habits-table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+.habits-table th,
+.habits-table td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+.status-header {
+    background-color: #f2f2f2;
+}
+
+.date-header {
+    background-color: #f2f2f2;
+    color: rgb(155, 5, 55);
+    height: 50px;
+}
+
+.status-cell {
+    background-color: #ffffff;
+    height: 50px;
+    cursor: pointer;
+}
+
+.habits-box{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid yellow; */
+    gap: 15px;
+    padding: 5px 100px;
+  
+}
+
+.habits-box-daily{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid yellow; */
+    gap: 20px;
+    padding: 5px 200px;
+}
+
+.habit-title{
+    flex: 1;
+    font-size: 23px;
+    font-weight: 700;
+    color: rgb(155, 5, 55);
+    font-family: Arial;
+}
+
+.fa-circle-check{
+    color: rgb(18, 182, 18);
+    font-size: 20px;
+}
+
+.fa-circle-xmark{
+    color:#ff0000;
+    font-size: 20px;
+}
+
+.fa-circle{
+    color: grey;
+    font-size: 20px;
+}
+
+.fa-trash-can, .fa-pen{
+    color: #ff0000;
+    font-size: 30px;
+}
+
+.habits-contol-container{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+   
+    
+}
+
+.add-habits{
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(155, 5, 55);
+}
+
+.show-daily{
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 700;
+   
+  
+}
+
+.show-daily-a{
+    text-decoration: none;
+    color: rgb(155, 5, 55);
+   
+}
+
+/* .add-habits-formContainer{
+    height: 300px;
+    width: 400px;
+    background-color: rgba(172, 172, 206, 0.986);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    padding: 20px 25px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+} */
+
+.add-habits-formContainer-show{
+    height: 300px;
+    width: 400px;
+    background-color: rgba(172, 172, 206, 0.986);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    padding: 20px 25px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transition: 0.4s ease-in-out;
+}
+
+.updateHabitFormContainer{
+    height: 300px;
+    width: 400px;
+    background-color: rgba(172, 172, 206, 0.986);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    padding: 20px 25px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transition: 0.4s ease-in-out;
+}
+
+.add-habits-formContainer-hide{
+    top: -500px;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+}
+
+
+
+.add-habitsForm{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.habit-control input{
+  
+   width: 100%;
+   padding: 12px 10px;
+   border: none;
+   outline: none;
+   border-radius: 5px;
+}
+.habit-control {
+    width: 100%;
+ }
+
+ .habit-control input::placeholder{
+    font-size: 20px;
+    font-weight: 600;
+    color: gray;
+ }
+
+ .cancel-add-habits{
+    background-color: #ff00009c;
+    width: 50%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(3, 3, 46);
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+ }
+
+ .save-habits{
+    background-color: rgba(31, 156, 31, 0.637);
+    width: 50%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(3, 3, 46);
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+ }
+
+ .save-habits:hover{
+    background-color: rgb(18, 182, 18);
+    color: #dddddd;
+ }
+
+ .cancel-add-habits:hover{
+    background-color: #ff0000;
+    color: #dddddd;
+ }
+
+ .save-habits button{
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(3, 3, 46);
+ }
+
+
+ .habits-box-right{
+    display: flex;
+    background-color: #dddddd;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    height: 100px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ }
+
+ .created-date{
+    font-size: 22px;
+    font-weight: 600;
+    color: gray;
+ }
+
+ .habit-desc{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(44, 43, 43);
+    
+ }
+
+ .habits-box-right .habit-desc{
+    margin-left: 20px;
+ }
+
+
+ .habits-actonControl{
+    display: flex;
+    gap: 10px;
+ }
+
+ /* error animation */
+
+ @keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.hidden {
+    display: none;
+}
+
+.alert-error {
+    color: #fff;
+    text-align: end;
+    font-size: 24px;
+    animation: fadeInOut 4s linear;
+    padding: 20px 30px;
+    background-color: #b45b5b;
+    border-radius: 5px;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.alert-success {
+    color: #fff;
+    text-align: end;
+    font-size: 24px;
+    animation: fadeInOut 4s linear;
+    padding: 20px 30px;
+    background-color: #429442;
+    border-radius: 5px;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* ------media query for 768px */
+@media screen and (max-width: 1024px) {
+    .habits-box-daily {
+        flex-direction: column; /* Change flex-direction to column for smaller screens */
+        align-items: center; /* Stretch items to full width */
+        padding: 5px 30px; /* Adjust padding for smaller screens */
+
+    }
+
+    .habits-box-right {
+        width: 100%;
+    }
+
+    .habits-box {
+        padding: 5px 20px;
+    }
+
+    .habits-box-daily {
+        height: 200px;
+    }
+}
+
+
+
+
+/* ------media query for 820px */
+@media screen and (max-width: 820px) {
+    .habits-table {
+        border-collapse: collapse;
+        width: 90%;
+    }
+    
+    .habits-box {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .habits-box-right {
+        height: inherit;
+        
+    }
+
+}
+
+
+
+/* ------media query for 768px */
+@media screen and (max-width: 768px) {
+    .habits-contol-container {
+        width: 90%;
+       
+    }
+
+    .show-daily {
+        padding: 15px 15px;
+       
+    }
+
+    .add-habits {
+        padding: 15px 15px; 
+    }
+
+
+
+}

@@ -1,0 +1,71 @@
+<div class="habits-container">
+    <% if (error) { %>
+        <div id="errorPopup" class="alert alert-error hidden">
+            <%= error %>
+        </div>
+    <% } %>
+    <% if (successMessage.length > 0) { %>
+        <div class="alert alert-success hidden" id="successPopup">
+            <%= successMessage %>
+        </div>
+    <% } %>
+
+   
+    <div class="habits-contol-container">
+        <div class="add-habits" onclick="toggleAddHabitForm()">+ Add habits</div>
+        <a href="/show-daily" class="show-daily-a"><div class="show-daily">Show daily</div></a>
+    </div>
+    <%= console.log(" successMessage console: ", successMessage.length) %>
+
+    
+
+    <% habits.forEach(habit => { %>
+        <div class="habits-box">
+            <div class="habit-title"><%= habit.title %></div>
+            <table class="habits-table">
+                <thead>
+                    <tr>
+                        <% habit.dates.forEach((dateObj, index) => { %>
+                            <th class="date-header"><%= formatDate(new Date(dateObj.date)) %></th>
+                        <% }); %>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <% habit.dates.forEach((dateObj, index) => { %>
+                            <td class="status-cell">
+                                <% if (dateObj.complete === 'done') { %>
+                                    <i class="fa-regular fa-circle-check toggle-icon" id="status-icon-<%= habit._id %>-<%= index %>"  onclick="toggleStatus('<%= habit._id %>', <%= index %>, 'done')"></i>
+                                <% } else if (dateObj.complete === 'not done') { %>
+                                    <i class="fa-regular fa-circle-xmark toggle-icon" id="status-icon-<%= habit._id %>-<%= index %>"  onclick="toggleStatus('<%= habit._id %>', <%= index %>, 'not done')"></i>
+                                <% } else { %>
+                                    <i class="fa-regular fa-circle toggle-icon" id="status-icon-<%= habit._id %>-<%= index %>"  onclick="toggleStatus('<%= habit._id %>', <%= index %>, 'none')"></i>
+                                <% } %>
+                            </td>
+                        <% }); %>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="delete-habits"><a href="/delete-habits?habitId=<%= habit._id %>"><i class="fa-solid fa-trash-can"></i></a></div>
+        </div>
+    <% }); %>
+</div>
+
+
+<div class="add-habits-formContainer add-habits-formContainer-hide">
+    <form action="/add-habits" class="add-habitsForm" method="post">
+        <div class="habit-control">
+            <input type="hidden" name="_id" value="<%= user._id %>">
+            <input type="text" name="title" placeholder="Habit name" class="habits-name">
+        </div>
+      
+        <div class="habit-control">
+            <input type="text" name="habitDesc" placeholder="Add description" class="habit-desc">
+        </div>
+        
+        <div class="cancel-add-habits" onclick="toggleAddHabitForm()"><p>Cancel</p></div>
+
+        <div class="save-habits"><button type="submit">Save</button></div>
+
+    </form>
+</div> 

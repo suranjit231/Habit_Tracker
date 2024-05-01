@@ -1,0 +1,351 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+body,html {
+    /* background-image: url('https://img.freepik.com/premium-photo/high-angle-view-woman-holding-drink-table_1048944-1391022.jpg?w=740');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; */
+    background-color: skyblue;
+    /* background-color: aliceblue; */
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+ 
+   
+}
+
+.left-nev{
+   
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+}
+
+.left-nev h2{
+    color: aliceblue;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.left-nev i{
+    color: aliceblue;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+.nev-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    /* background-color: rgb(27, 159, 211); */
+    background-color: rgba(15, 26, 31, 0.384);
+}
+
+.right-nev{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: aliceblue;
+    font-size: 23px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.right-nev h3 a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.home-caption{
+    text-align: center;
+    margin-top: 70px;
+    font-size: 32px;
+    font-weight: 700;
+   
+    color: rgb(253, 253, 249);
+}
+
+.get-start, .login-formToggle-button{
+    text-align: center;
+    margin-top: 50px;
+   
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 7px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    background-color: aliceblue;
+    color: rgb(155, 5, 55);
+}
+
+
+
+.get-start:hover{
+    transform: translateY(-5px);
+    background-color:rgb(155, 5, 55) ;
+    color: aliceblue;
+}
+
+.home-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-form-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 15px 10px;
+    display: none;
+}
+
+.resetPassword-form-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 15px 10px;
+   
+}
+
+
+.formWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 15px 10px;
+}
+
+.form-container-show{
+    height: 400px;
+    width: 300px;
+    /* border: 1px solid red; */
+    position: absolute;
+   top: 100px;
+   right: 20px;
+   transition: 0.4s ease-in-out;
+   background-color: aliceblue;
+   border-radius: 10px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+
+.form-container-hide{
+    height: 400px;
+    width: 300px;
+    position: absolute;
+   top: -450px;
+   right: 20px;
+   transition: 0.4s ease-in-out;
+}
+
+#form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 25px;
+    
+}
+
+.send-mailContailer-show{
+    width: 350px;
+    height: 200px;
+    position: absolute;
+   top: 50%;
+   left:50%;
+   transform: translate(-50%,-50%);
+   transition: 0.4s ease-in-out;
+   background-color: aliceblue;
+   border-radius: 10px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   padding: 15px;
+   transition: 0.4s ease-in-out;
+}
+
+.send-mailContailer-hide{
+    position: absolute;
+    top:-500px;
+    transition: 0.4s ease-in-out;
+}
+
+.send-mailBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.send-mailBox h3{
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.send-mailBox form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.send-mailBox form .form-control input{
+    padding: 5px 10px;
+    width: 250px;
+}
+
+#form-container h2{
+    color: rgb(155, 5, 55);
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.form-control{
+    display: flex;
+    gap: 5px;
+}
+
+.fa-xmark{
+    position: absolute;
+    top:15px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.form-control i{
+    font-size: 25px;
+    color: rgb(155, 5, 55)
+}
+
+.form-control input{
+    flex: 1;
+    padding: 5px 10px;
+    /* outline: none; */
+    border: none;
+    border-radius: 5px;
+}
+.register-form, .login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.register-form button, .login-form button, .send-mailBox button{
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    background-color: aliceblue;
+    color: rgb(155, 5, 55);
+    border: 1px solid rgb(155, 5, 55);
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.register-form button:hover, .login-form button:hover, .send-mailBox button:hover{
+    transform: translateY(-5px);
+    background-color:rgb(155, 5, 55) ;
+    color: aliceblue;
+}
+
+.form-control input::placeholder {
+    color: #999; 
+    font-style: italic; 
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.register-formBox a{
+    color: rgb(155, 5, 55);
+    text-align: center;
+    display: block;
+}
+
+
+/* style for login form */
+
+#login-form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 25px;
+    height: 400px;
+    width: 300px;
+    position: absolute;
+ 
+   transition: 0.4s ease-in-out;
+   background-color: aliceblue;
+   border-radius: 10px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#login-form-container .login-form-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 15px 10px;
+   
+}
+
+.forget-passoword{
+    text-align: center;
+}
+
+.forget-passoword a{
+    color: rgb(155, 5, 55);
+}
+
+
+.loginForm-container-show{
+    height: 400px;
+    width: 300px;
+    /* border: 1px solid red; */
+    position: absolute;
+   top: 100px;
+   right: 20px;
+   transition: 0.4s ease-in-out;
+   background-color: aliceblue;
+   border-radius: 10px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   display: flex;
+
+}
+
+.loginForm-container-hide{
+    height: 400px;
+    width: 300px;
+    position: absolute;
+   top: -450px;
+   right: 20px;
+   transition: 0.4s ease-in-out;
+   display: none;
+}
+
+.errorMessageDev{
+    color: red;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* .....toggle button */
+.hidden {
+    display: none;
+}

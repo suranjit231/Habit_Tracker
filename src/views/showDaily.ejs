@@ -1,0 +1,75 @@
+<div class="habits-container">
+    <div class="habits-contol-container">
+        <div class="add-habits" onclick="toggleAddHabitForm()">+ Add habits</div>
+        <a href="/all-habits" class="show-daily-a"><div class="show-daily">Show weekly</div></a>
+    </div>
+    <% if (error) { %>
+        <div id="errorPopup" class="alert alert-error hidden">
+            <%= error %>
+        </div>
+    <% } %>
+
+    <% if (successMessage && successMessage.length > 0) { %>
+        <div class="alert alert-success hidden" id="successPopup">
+            <%= successMessage %>
+        </div>
+    <% } %>
+
+
+    <% habits.forEach(habit => { %>
+        <div class="habits-box-daily">
+            <div class="habit-title left-side"><%= habit.title %></div>
+            
+            <div class="habits-box-right">
+                <div class="created-date"><%= formateCreatedDate(habit) %></div>
+                <div class="habit-desc"><%= habit.habitDesc %></div>
+
+                <div class="habits-actonControl">
+                    <div class="update-dailyHabits" onclick="toggleUpdateHabitForm('<%= habit._id %>')">
+                        <i class="fa-solid fa-pen"></i>
+                      </div>
+                <div class="delete-habits"><a href="/delete-habits?habitId=<%= habit._id %>"><i class="fa-solid fa-trash-can"></i></a></div>
+
+                
+                </div>
+                
+            </div>
+            
+        </div>
+    <% }); %>
+</div>
+
+
+<div class="add-habits-formContainer add-habits-formContainer-hide">
+    <form action="/add-habits" class="add-habitsForm" method="post">
+        <div class="habit-control">
+            <input type="hidden" name="_id" value="<%= user ? user._id : '' %>">
+            <input type="text" name="title" placeholder="Habit name" class="habits-name">
+        </div>
+      
+        <div class="habit-control">
+            <input type="text" name="habitDesc" placeholder="Add description" class="habit-desc">
+        </div>
+        
+        <div class="cancel-add-habits" onclick="toggleAddHabitForm()"><p>Cancel</p></div>
+
+        <div class="save-habits"><button type="submit">Save</button></div>
+
+    </form>
+</div> 
+
+
+<div class="updateHabitFormContainer add-habits-formContainer-hide">
+    <form action="/update-habit" id="updateHabitForm" class="add-habitsForm" method="post">
+        <input type="hidden" name="_id" value="<%= user ? user._id : '' %>">
+        <input type="hidden" id="habitIdInput" name="habitId" value="">
+        <div class="habit-control">
+            <input type="text" id="updateTitleInput" name="title" placeholder="Habit name" class="habits-name">
+        </div>
+        <div class="habit-control">
+            <input type="text" id="updateDescInput" name="habitDesc" placeholder="Add description" class="habit-desc">
+        </div>
+        <div class="cancel-add-habits" onclick="HideUpdateHabitForm()"><p>Cancel</p></div>
+        <div class="save-habits"><button type="submit">Save</button></div>
+    </form>
+</div>

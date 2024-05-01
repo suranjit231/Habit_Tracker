@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit-Tracker</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="/css/weekly-havits.css">
+    <link rel="stylesheet" type="text/css" href="/css/error.css">
+   
+</head>
+<body>
+    <div class="nev-container">
+        <div class="left-nev">
+            <h2>HabitFlow</h2>
+            <i class="fa-solid fa-person-walking"></i>
+        </div>
+       
+
+        <% if(!locals.email){ %>
+           
+            <div class="right-nev">
+                <h3><a href="/signup">Sign-up|</a></h3>
+                <h3><a href="/signin">Sign-in</a></h3>
+            </div>
+           <% }else { %>
+            <div class="right-nev">
+                <h3><%= user.name %> |</h3>
+                <h3><a href="/user-logout"><i class="fa-solid fa-right-from-bracket"></i></a></h3>
+            </div>
+        <% } %>
+
+
+
+
+
+    </div>
+
+    <%- body %>
+
+ 
+    <script src="form.js"></script>
+    <script src="habitsStatusControll.js"></script>
+   
+</body>
+</html>

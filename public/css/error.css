@@ -1,0 +1,75 @@
+.errorDiv{
+    border: 1px solid red;
+}
+
+.error{
+    color: red;
+}
+
+.error-header{
+    height: calc(100% - 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-header h1{
+    color: aliceblue;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.emoji-cont{
+    width: 100px ;
+    height: 100px;
+    background-color: aliceblue;
+    border: 7px solid #000;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: 60px;
+   animation: move-emoji 0.3s ease-in-out infinite ;
+}
+
+@keyframes move-emoji {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.emoji-cont i{
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.header-error{
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px
+}
+
+.error-box h2{
+    font-size: 35px;
+    font-weight: 700;
+    color: red;
+}
+
+.apply-Error{
+    color: red;
+}
+
+.error-box a{
+    font-size: 16px;
+    color: #070202;
+    text-decoration: none;
+}

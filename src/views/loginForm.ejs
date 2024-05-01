@@ -1,0 +1,49 @@
+<div class="home-container">
+    <h3 class="home-caption">
+        Make Every Day Count! Track Your <br>
+         Habits Shape Your Future
+    </h3>
+    
+    <div class="login-formToggle-button" onclick="toggleLoginForm()">Get Start</div>
+
+
+<div id="login-form-container">
+    <div class="login-form-wrapper">
+
+   
+    <h2>Login</h2>
+    <div class="login-formBox">
+
+        <form action="/signin" method="post" class="login-form">
+            <% if (error) { %>
+                <p class="errorMessageDev"><%= error %></p>
+                <% } %>
+           
+
+            <div class="email-div form-control">
+                <label for="email"><i class="fa-solid fa-envelope"></i></label>
+                <input type="text" name="email" id="email" placeholder="Email">
+            </div>
+
+            <div class="password-div form-control">
+                <label for="password"><i class="fa-solid fa-lock"></i></label>
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+
+            <button type="submit">Login</button>
+
+        </form>
+
+       
+       <p  class="forget-passoword">
+         <a href="/forget-passoword">Forget password?</a>
+         <br><br>
+         <a href="/signup">Register</a>
+        </p>
+        
+    </div>
+</div>
+    
+</div>
+
+</div>
