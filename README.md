@@ -7,7 +7,7 @@ To run this application on your local machine, please follow these steps:
 
 Clone this repository using the following command:
 ```
-$ git clone https://github.com/agentgrey/TodoList.git
+$ git clone https://github.com/suranjit231/Habit_Tracker.git
 ```
 Install the required dependencies using the following command:
 ```
